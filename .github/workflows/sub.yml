@@ -1,1 +1,71 @@
+name: build-subscription
 
+on:
+  schedule:
+    - cron: "*/30 * * * *"   # ⏰ هر 30 دقیقه یکبار
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Fetch subscription
+        run: |
+          curl -L --max-time 30 "https://sublink.cnavippanel.com/sub/d00wYTduLUJvdCwxNzgzNjE0Nzcx4wKHXH4Y7f" -o raw.txt
+
+      - name: Detect format & decode
+        run: |
+          echo "RAW SIZE:"
+          wc -c raw.txt
+
+          if base64 -d raw.txt >/dev/null 2>&1; then
+            base64 -d raw.txt > decoded.txt
+            echo "FORMAT: BASE64"
+          else
+            cp raw.txt decoded.txt
+            echo "FORMAT: RAW"
+          fi
+
+      - name: Extract valid VLESS links
+        run: |
+          grep -oE 'vless://[^[:space:]]+' decoded.txt \
+            | grep -E '.+@.+:[0-9]+\?.+' \
+            > nodes.txt || true
+
+          # حذف لینک‌های خراب / کوتاه
+          awk 'length($0) > 60' nodes.txt > clean.txt
+          mv clean.txt nodes.txt
+
+          echo "VALID LINKS:"
+          wc -l nodes.txt
+
+          echo "SAMPLE:"
+          head -n 5 nodes.txt
+
+      - name: Validate output
+        run: |
+          if [ ! -s nodes.txt ]; then
+            echo "ERROR: No valid nodes found"
+            exit 1
+          fi
+
+      - name: Build subscription (base64)
+        run: |
+          base64 -w 0 nodes.txt > sub.txt
+
+          echo "FINAL SIZE:"
+          wc -c sub.txt
+
+      - name: Commit & push changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          git add sub.txt nodes.txt
+
+          git commit -m "auto update sub" || echo "no changes"
+          git push
