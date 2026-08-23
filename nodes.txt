@@ -4,3 +4,13 @@ vless://2e9329d6-7e78-4f85-9103-b0dd7e0bd678@s-api-tech.techo-net.com:2083?secur
 vless://2e9329d6-7e78-4f85-9103-b0dd7e0bd678@cd-s-cdn-api.pixo-space.com:2096?security=none&type=ws&headerType=&path=%2F%3Fed&host=icloud.com#%F0%9F%87%A9%F0%9F%87%AA%20Germany
 vless://2e9329d6-7e78-4f85-9103-b0dd7e0bd678@s-1.xormira.ir:2087?security=none&type=ws&headerType=&path=%2F%3Fed%3D2560&host=icloud.com#%F0%9F%87%A9%F0%9F%87%AA%20Germany
 vless://2e9329d6-7e78-4f85-9103-b0dd7e0bd678@s-api-tun.zyro-lab.com:2460?security=none&type=ws&headerType=&path=%2F%3Fed%3D2085&host=icloud.com#%F0%9F%87%A9%F0%9F%87%AA%20Germany
+vless://2e9329d6-7e78-4f85-9103-b0dd7e0bd678@141.11.21.148:190?security=none&type=ws&headerType=&path=%2F&host=#%F0%9F%9A%80%20Marz%20%28UIMsqv-Bot%29%20%5BVLESS%20-%20ws%5D
+vless://2e9329d6-7e78-4f85-9103-b0dd7e0bd678@141.11.21.148:195?security=none&type=ws&headerType=&path=%2F&host=#%F0%9F%9A%80%20Marz%20%28UIMsqv-Bot%29%20%5BVLESS%20-%20ws%5D
+vless://2e9329d6-7e78-4f85-9103-b0dd7e0bd678@141.11.21.148:180?security=none&type=ws&headerType=&path=%2F&host=#%F0%9F%9A%80%20Marz%20%28UIMsqv-Bot%29%20%5BVLESS%20-%20ws%5D
+vless://2e9329d6-7e78-4f85-9103-b0dd7e0bd678@141.11.21.148:1325?security=none&type=ws&headerType=&path=%2F&host=#%F0%9F%9A%80%20Marz%20%28UIMsqv-Bot%29%20%5BVLESS%20-%20ws%5D
+vless://2e9329d6-7e78-4f85-9103-b0dd7e0bd678@141.11.21.148:3045?security=none&type=ws&headerType=&path=%2F&host=#%F0%9F%9A%80%20Marz%20%28UIMsqv-Bot%29%20%5BVLESS%20-%20ws%5D
+vless://2e9329d6-7e78-4f85-9103-b0dd7e0bd678@141.11.21.148:2492?security=none&type=ws&headerType=&path=%2F&host=#%F0%9F%9A%80%20Marz%20%28UIMsqv-Bot%29%20%5BVLESS%20-%20ws%5D
+vless://2e9329d6-7e78-4f85-9103-b0dd7e0bd678@141.11.21.148:175?security=none&type=ws&headerType=&path=%2F&host=#%F0%9F%9A%80%20Marz%20%28UIMsqv-Bot%29%20%5BVLESS%20-%20ws%5D
+vless://2e9329d6-7e78-4f85-9103-b0dd7e0bd678@141.11.21.148:1313?security=none&type=ws&headerType=&path=%2F&host=#%F0%9F%9A%80%20Marz%20%28UIMsqv-Bot%29%20%5BVLESS%20-%20ws%5D
+vless://2e9329d6-7e78-4f85-9103-b0dd7e0bd678@141.11.21.148:1414?security=none&type=ws&headerType=&path=%2F&host=#%F0%9F%9A%80%20Marz%20%28UIMsqv-Bot%29%20%5BVLESS%20-%20ws%5D
+vless://2e9329d6-7e78-4f85-9103-b0dd7e0bd678@141.11.21.148:1515?security=none&type=ws&headerType=&path=%2F&host=#%F0%9F%9A%80%20Marz%20%28UIMsqv-Bot%29%20%5BVLESS%20-%20ws%5D
