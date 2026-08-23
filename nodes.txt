@@ -1,4 +1,5 @@
 vless://2e9329d6-7e78-4f85-9103-b0dd7e0bd678@1.1.1.1:80?security=none&type=tcp&headerType=none&path=&host=#%F0%9F%91%A4%20User%3A%20UIMsqv-Bot%20
+vless://2e9329d6-7e78-4f85-9103-b0dd7e0bd678@0.0.0.0:600?security=none&type=tcp&headerType=none&path=&host=#%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87%20%D9%84%DB%8C%D9%86%DA%A9%20%D8%AE%D9%88%D8%AF%20%D8%B1%D8%A7%20%D8%A2%D9%BE%D8%AF%DB%8C%D8%AA%20%DA%A9%D9%86%DB%8C%D8%AF%20%E2%9C%85
 vless://2e9329d6-7e78-4f85-9103-b0dd7e0bd678@api-s1.zyro-lab.com:2053?security=none&type=ws&headerType=&path=%2F%3Fed%3D2560&host=icloud.com#%F0%9F%87%A9%F0%9F%87%AA%20Germany
 vless://2e9329d6-7e78-4f85-9103-b0dd7e0bd678@cdn-s1.zyro-lab.com:2083?security=none&type=ws&headerType=&path=%2F%3Fed%3D2085&host=icloud.com#%F0%9F%87%A9%F0%9F%87%AA%20Germany
 vless://2e9329d6-7e78-4f85-9103-b0dd7e0bd678@node-s1.zyro-lab.com:2096?security=none&type=ws&headerType=&path=%2F%3Fed&host=icloud.com#%F0%9F%87%A9%F0%9F%87%AA%20Germany
@@ -17,5 +18,3 @@ vless://2e9329d6-7e78-4f85-9103-b0dd7e0bd678@node-s1.berluno.ir:1515?security=no
 vless://2e9329d6-7e78-4f85-9103-b0dd7e0bd678@api-s1.berluno.ir:1620?security=none&type=ws&headerType=&path=%2F&host=play.google.com#%F0%9F%87%A9%F0%9F%87%AA%20Germany
 vless://2e9329d6-7e78-4f85-9103-b0dd7e0bd678@cdn-s1.denmexa.ir:1720?security=none&type=ws&headerType=&path=%2F&host=icloud.com#%F0%9F%87%A9%F0%9F%87%AA%20Germany
 vless://2e9329d6-7e78-4f85-9103-b0dd7e0bd678@node-s1.harfuna.ir:1820?security=none&type=ws&headerType=&path=%2F&host=play.google.com#%F0%9F%87%A9%F0%9F%87%AA%20Germany
-vless://2e9329d6-7e78-4f85-9103-b0dd7e0bd678@node-s1.varlira.ir:1920?security=none&type=ws&headerType=&path=%2F&host=icloud.com#%F0%9F%87%A9%F0%9F%87%AA%20Germany
-vless://2e9329d6-7e78-4f85-9103-b0dd7e0bd678@0.0.0.0:1020?security=none&type=ws&headerType=&path=%2F&host=icloud.com#%D8%AF%D8%B1%20%D8%B5%D9%88%D8%B1%D8%AA%20%D9%82%D8%B7%D8%B9%DB%8C%20%D9%84%DB%8C%D9%86%DA%A9%20%D8%AE%D9%88%D8%AF%20%D8%B1%D8%A7%20%D8%A2%D9%BE%D8%AF%DB%8C%D8%AA%20%DA%A9%D9%86%DB%8C%D8%AF%F0%9F%A7%A9
