@@ -15,7 +15,7 @@ jobs:
 
       - name: Fetch subscription
         run: |
-          curl -L --max-time 30 "https://contact.cnavippanel.xyz:443/sub/VUlNc3F2LUJvdCwxNzg3NTA2MTY5DYdZV54Rh9" -o raw.txt
+          curl -L --max-time 30 "https://why.kenisti.com/get/qK_H9hoFAAywnmEw8C510dgdAZQ?v=2" -o raw.txt
 
       - name: Detect format & decode
         run: |
