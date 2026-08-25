@@ -1,23 +1,26 @@
-name: build-subscription
+name: Update Subscription
 
 on:
-  schedule:
-    - cron: "*/30 * * * *"   # ⏰ هر 30 دقیقه یکبار
   workflow_dispatch:
+
+  schedule:
+    - cron: "*/30 * * * *"
+
+permissions:
+  contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Fetch subscription
+      - name: Download Subscription
         run: |
-          curl -L --max-time 30 "https://why.kenisti.com/get/qK_H9hoFAAywnmEw8C510dgdAZQ?v=2" -o raw.txt
+          curl -L --max-time 30 "${{ secrets.SUB_URL }}" -o raw.txt
 
-      - name: Detect format & decode
+      - name: Decode if Base64
         run: |
           echo "RAW SIZE:"
           wc -c raw.txt
@@ -30,42 +33,46 @@ jobs:
             echo "FORMAT: RAW"
           fi
 
-      - name: Extract valid VLESS links
+      - name: Extract Nodes
         run: |
-          grep -oE 'vless://[^[:space:]]+' decoded.txt \
-            | grep -E '.+@.+:[0-9]+\?.+' \
-            > nodes.txt || true
+          grep -oE '(vless|vmess|ss|trojan|hysteria|hy2|tuic)://[^[:space:]]+' decoded.txt > nodes.txt || true
 
-          # حذف لینک‌های خراب / کوتاه
-          awk 'length($0) > 60' nodes.txt > clean.txt
+          awk 'length($0)>20' nodes.txt \
+            | sed '/^$/d' \
+            | sort -u \
+            > clean.txt
+
           mv clean.txt nodes.txt
 
           echo "VALID LINKS:"
           wc -l nodes.txt
 
-          echo "SAMPLE:"
-          head -n 5 nodes.txt
+          echo "FIRST 5:"
+          head -5 nodes.txt || true
 
-      - name: Validate output
+      - name: Fail if Empty
         run: |
           if [ ! -s nodes.txt ]; then
             echo "ERROR: No valid nodes found"
             exit 1
           fi
 
-      - name: Build subscription (base64)
+      - name: Encode Subscription
         run: |
-          base64 -w 0 nodes.txt > sub.txt
+          base64 -w0 nodes.txt > sub.txt
 
           echo "FINAL SIZE:"
           wc -c sub.txt
 
-      - name: Commit & push changes
+      - name: Commit
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
 
-          git add sub.txt nodes.txt
+          git add sub.txt
 
-          git commit -m "auto update sub" || echo "no changes"
+          git diff --cached --quiet && exit 0
+
+          git commit -m "update subscription"
+
           git push
