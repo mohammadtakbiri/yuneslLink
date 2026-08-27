@@ -35,6 +35,30 @@ jobs:
 
       - name: Extract Nodes
         run: |
+          echo "========================================"
+          echo "BEFORE FIX"
+          echo "========================================"
+
+          grep -oE '(vless|vmess|ss|trojan|hysteria|hy2|tuic)://[^[:space:]]+' decoded.txt | head -5 || true
+
+          echo ""
+          echo "Fixing escaped ampersands..."
+
+          # Convert literal \u0026 into &
+          sed -i 's/\\u0026/\&/g' decoded.txt
+
+          echo ""
+          echo "========================================"
+          echo "AFTER FIX"
+          echo "========================================"
+
+          grep -oE '(vless|vmess|ss|trojan|hysteria|hy2|tuic)://[^[:space:]]+' decoded.txt | head -5 || true
+
+          echo ""
+          echo "========================================"
+          echo "EXTRACTING NODES"
+          echo "========================================"
+
           grep -oE '(vless|vmess|ss|trojan|hysteria|hy2|tuic)://[^[:space:]]+' decoded.txt > nodes.txt || true
 
           awk 'length($0)>20' nodes.txt \
@@ -44,9 +68,11 @@ jobs:
 
           mv clean.txt nodes.txt
 
+          echo ""
           echo "VALID LINKS:"
           wc -l nodes.txt
 
+          echo ""
           echo "FIRST 5:"
           head -5 nodes.txt || true
 
