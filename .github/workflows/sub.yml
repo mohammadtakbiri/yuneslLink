@@ -18,7 +18,7 @@ jobs:
 
       - name: Download Subscription
         run: |
-          curl -L --max-time 30 "${{ secrets.SUB_URL }}" -o raw.txt
+          curl -L --max-time 30 "https://srw2.radnet.click:2096/sub/yb71i0oc/" -o raw.txt
 
       - name: Decode if Base64
         run: |
